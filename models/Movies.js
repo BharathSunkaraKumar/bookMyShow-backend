@@ -6,7 +6,7 @@ const castSchema = new mongoose.Schema({
 });
 
 const showSchema = new mongoose.Schema({
-  showId: { type: String, required: true },
+  // showId: { type: String, required: true },
   time: { type: String, required: true },
   format: { type: String, required: true }, // e.g. 2D, 3D, IMAX
   price: { type: Number, required: true },
@@ -15,7 +15,7 @@ const showSchema = new mongoose.Schema({
 });
 
 const theaterSchema = new mongoose.Schema({
-  theaterId: { type: String, required: true },
+  // theaterId: { type: String, required: true },
   name: { type: String, required: true },
   location: { type: String, required: true },
   shows: [showSchema]
@@ -35,7 +35,7 @@ const movieSchema = new mongoose.Schema({
   director: { type: String },
   cast: [castSchema],
   formats: [{ type: String }], // 2D, IMAX, 4DX
-  // theaters: [theaterSchema]
+  theaters: [theaterSchema]
 }, { timestamps: true });
 
 const Movie = mongoose.model("Movie", movieSchema);
